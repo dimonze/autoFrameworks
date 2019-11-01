@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  dotnet:
+    working_dir: /project
+    image: mcr.microsoft.com/dotnet/framework/sdk:latest
+    dns: 8.8.4.4
+    depends_on:
+      - chrome
+    volumes:
+      - .:/project
+  chrome:
+    ports:
+      - '4444'
+      - '5901:5900'
+    dns: 8.8.4.4
+    image: selenium/standalone-chrome-debug:latest

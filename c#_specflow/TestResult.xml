@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.10.0.0" clr-version="4.0.30319.42000" start-time="2019-11-01 19:01:43Z" end-time="2019-11-01 19:02:20Z" duration="36.444604">
+  <command-line><![CDATA[packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe  SpecFlow\bin\Debug\SpecFlow.dll]]></command-line>
+  <test-suite type="Assembly" id="0-1002" name="SpecFlow.dll" fullname="C:\Users\dhimenes\Documents\autoFrameworks\c#_specflow\SpecFlow\bin\Debug\SpecFlow.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2019-11-01 19:01:46Z" end-time="2019-11-01 19:02:20Z" duration="33.477085" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+    <environment framework-version="3.9.0.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 10.0.17134.0" platform="Win32NT" cwd="C:\Users\dhimenes\Documents\autoFrameworks\c#_specflow" machine-name="KVL1411006" user="dhimenes" user-domain="LOHIKA" culture="en-US" uiculture="en-US" os-architecture="x64" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="C:\Users\dhimenes\Documents\autoFrameworks\c#_specflow" />
+      <setting name="ImageRuntimeVersion" value="4.0.30319" />
+      <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.7" />
+      <setting name="ImageRequiresX86" value="False" />
+      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+      <setting name="NumberOfTestWorkers" value="4" />
+    </settings>
+    <properties>
+      <property name="_PID" value="5980" />
+      <property name="_APPDOMAIN" value="domain-" />
+    </properties>
+    <test-suite type="TestSuite" id="0-1003" name="SpecFlow" fullname="SpecFlow" runstate="Runnable" testcasecount="1" result="Passed" start-time="2019-11-01 19:01:46Z" end-time="2019-11-01 19:02:20Z" duration="33.439682" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestSuite" id="0-1004" name="Features" fullname="SpecFlow.Features" runstate="Runnable" testcasecount="1" result="Passed" start-time="2019-11-01 19:01:46Z" end-time="2019-11-01 19:02:20Z" duration="33.438102" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+        <test-suite type="TestFixture" id="0-1000" name="TestLoginFeatureFeature" fullname="SpecFlow.Features.TestLoginFeatureFeature" classname="SpecFlow.Features.TestLoginFeatureFeature" runstate="Runnable" testcasecount="1" result="Passed" start-time="2019-11-01 19:01:46Z" end-time="2019-11-01 19:02:20Z" duration="33.431516" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+          <properties>
+            <property name="Description" value="Test login feature" />
+          </properties>
+          <output><![CDATA[-> Using default config
+]]></output>
+          <test-case id="0-1001" name="LoginSeleniumDemo" fullname="SpecFlow.Features.TestLoginFeatureFeature.LoginSeleniumDemo" methodname="LoginSeleniumDemo" classname="SpecFlow.Features.TestLoginFeatureFeature" runstate="Runnable" seed="682049491" result="Passed" start-time="2019-11-01 19:01:47Z" end-time="2019-11-01 19:02:20Z" duration="32.967627" asserts="0">
+            <properties>
+              <property name="Description" value="Login selenium demo" />
+              <property name="Category" value="login" />
+            </properties>
+            <output><![CDATA[Given I am on "https://staging.contentanalyticsinc.com/"
+-> done: Stepdefs.GivenIAmOn("https://staging.c...") (3.4s)
+When I fill in username with "automation@contentanalyticsinc.com"
+-> done: Stepdefs.WhenIFillInUsernameWith("automation@conten...") (0.5s)
+And I fill in password with "dmRv9mR8mKFQ6kcDyxh44u2p"
+-> done: Stepdefs.WhenIFillInPasswordWith("dmRv9mR8mKFQ6kcDy...") (0.3s)
+And I click on "SignIn"
+-> done: Stepdefs.WhenIClickOn("SignIn") (18.2s)
+Then I should see "Content Health" in title
+-> done: Stepdefs.ThenIShouldSeeInTitle("Content Health") (2.9s)
+]]></output>
+          </test-case>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
