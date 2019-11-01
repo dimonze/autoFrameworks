@@ -1,0 +1,148 @@
+<html lang="en"><head><title>Content Analytics Inc.</title>
+            <link rel="icon" href="https://staging.contentanalyticsinc.com/webroot/img/favicon.ico?v=1">
+        <link href="https://staging.contentanalyticsinc.com/css/vendor/googleapis_fonts.css?v=1572548070" rel="stylesheet" type="text/css">
+    <link href="https://staging.contentanalyticsinc.com/css/vendor/bootstrap/bootstrap.css?v=1572548070" rel="stylesheet">
+    <link href="https://staging.contentanalyticsinc.com/css/styles.css?v=1572548070" rel="stylesheet">
+    <link href="https://staging.contentanalyticsinc.com/css/pager.css?v=1572548070" rel="stylesheet">
+    <link href="https://staging.contentanalyticsinc.com/css/home-page.css?v=1572548070" rel="stylesheet">
+    <link href="https://staging.contentanalyticsinc.com/css/vendor/font-awesome/font-awesome.min.css?v=1572548070" rel="stylesheet">
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://staging.contentanalyticsinc.com/js/jquery-3.3.1.min.js?v=1572548070"></script>
+	</head><body class="login_block ">
+        <div class="login-info-bar hidden">
+            <span>In order to ensure the security of your account, we are using single sign on with your identity provider. You will be redirected to your identity provider to log in with your network credentials after you click on the sign in button</span>
+        </div>
+		<div class="container">
+			<div class="row-fluid">
+    <div class="pull-left"></div>
+</div>
+
+<div class="row-fluid">
+    <div class="span6 offset3">
+                    <div class="solution-login"></div>
+                <br>
+        <div class="login_parent_content">
+            <div class="login_content_new">
+                <div class="login_header_new">
+                    <div class="login_below">Please login below</div>
+                </div>
+                                    <hr style="margin: 3px 0;">
+                <hr style="margin: -2px 0;">
+                                <form action="https://staging.contentanalyticsinc.com/" method="post" accept-charset="utf-8" class="form-horizontal" id="login_form" name="login_form">                <div class="login_form">
+                    <div class="login_filed username-container"><i class="fa fa-envelope fa-fw"></i><input type="text" name="identity" value="" id="identity" placeholder="Your email"></div>
+                    <div class="login_filed password-container" style="margin-top:8px"><i class="fa fa-key fa-fw"></i><input type="password" name="password" value="" id="password" placeholder="Password"></div>
+                    <div class="under_login_filed remember-forgot-password-container">
+                        <div class="pull-left"><input type="checkbox" name="remember" value="1" id="remember"><span style="color:#848383;margin-left: 8px;">Remember me</span></div>
+                                                <div class="pull-right"><a href="https://staging.contentanalyticsinc.com/auth/forgot_password" class="forgot_pass">Forgot password?</a></div>
+                                            </div>
+                </div>
+                <hr style="margin: 3px 0;">
+                <div style="text-align:center">
+                    <div>&nbsp;</div>
+                                                                <span class="login_terms">By clicking below you agree to our <a target="_blank" href="https://staging.contentanalyticsinc.com/terms_of_service">Terms of Service</a></span>
+                                        <div>&nbsp;</div>
+                    <input type="submit" name="submit" value="SIGN IN" class="login_btn_new">                </div>
+                </form>            </div>
+        </div>
+        <div class="troubleshooting-text">
+            Please consider using Google Chrome for best performance
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(() => {
+        let infoBar             = $('.login-info-bar');
+        let username            = $('#login_form input[type=text]');
+        let password            = $('#login_form input[type=password]');
+        let passwordContainer   = $('.password-container');
+        let rememberMeContainer = $('.remember-forgot-password-container');
+        let inputFields         = $('#login_form input[type=text], #login_form input[type=password]');
+        let loginButton         = $('.login_btn_new');
+        let closeErrorMsgButton = $('#close_error_msg');
+        let maxAttemptsMsg      = $('#max_attempts_exceeded_msg');
+        let forceSsoForDomains  = ''
+            .split(',')
+            .map((s) => s.trim().toLowerCase())
+            .filter((s) => s.length);
+
+        closeErrorMsgButton.off('click').on('click', () => {
+            closeErrorMsgButton.fadeOut();
+        });
+
+        setTimeout(() => {
+            updateLoginButton();
+        }, 1000);
+
+        setTimeout(() => {
+            maxAttemptsMsg.remove();
+        }, 5000);
+
+        inputFields.keyup(() => {
+            updateLoginButton();
+        });
+
+        inputFields.blur(() => {
+            $(this).parent().removeClass('login_filed_active');
+            updateLoginButton();
+        });
+
+        inputFields.focus(() => {
+            $(this).parent().addClass('login_filed_active');
+        });
+
+        updateLoginButton();
+
+        function forceSso() {
+            let parts = username.val().trim().split('@');
+
+            if (parts.length !== 2) {
+                return false;
+            }
+
+            for (let domain of forceSsoForDomains) {
+                if (domain === parts[1].toLowerCase()) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        function updateLoginButton() {
+            let valid;
+
+            if (forceSso()) {
+                infoBar.removeClass('hidden');
+                loginButton.val('SIGN IN WITH SSO');
+                passwordContainer.hide();
+                rememberMeContainer.hide();
+
+                valid = username.val().trim().length;
+            } else {
+                infoBar.addClass('hidden');
+                loginButton.val('SIGN IN');
+                passwordContainer.show();
+                rememberMeContainer.show();
+
+                valid = username.val().trim().length && password.val().trim().length;
+            }
+
+            loginButton.toggleClass('disabled', !valid).prop('disabled', !valid);
+        }
+    });
+</script>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-108276605-1"></script>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-108276605-1');
+</script>
+		</div>
+	
+
+</body></html>

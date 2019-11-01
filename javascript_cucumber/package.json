@@ -1,0 +1,17 @@
+{
+  "name": "javascript-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "license": "",
+  "main": "",
+  "scripts": {
+    "e2e": "./node_modules/.bin/cucumber-js ./e2e/features/Login.feature"
+  },
+  "dependencies": {
+    "assert": "^1.4.1",
+    "chromedriver": "^78.0.1",
+    "cucumber": "^1.3.0",
+    "geckodriver": "^1.1.3",
+    "selenium-webdriver": "^3.0.0"
+  }
+}
